@@ -1,4 +1,5 @@
 import React from 'react';
+import 'style.css';
 import { Form, Button, Input, Radio, Select } from 'antd';
 const Option = Select.Option;
 const FormItem = Form.Item;
