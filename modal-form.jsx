@@ -132,44 +132,45 @@ class ModalForm extends React.Component {
 
       return (
         <FormItem key={item_key} {...formItem_attr}>
-          {getFieldDecorator(name, {
-            initialValue,
-            rules: [
-              ...rules, 
-              ...(
-                required?[
-                  {required: true, message: '请'+( /(Radios|Select|MultTree)/.test(type)?'选择':'输入')+label}
-                ]:[]
-              )
-            ]
-          })(
+          {item.render?
+            item.render(getFieldDecorator, formItem_attr, ipt_attrs, options)
+            :getFieldDecorator(name, {
+              initialValue,
+              rules: [
+                ...rules, 
+                ...(
+                  required?[
+                    {required: true, message: '请'+( /(Radios|Select|MultTree)/.test(type)?'选择':'输入')+label}
+                  ]:[]
+                )
+              ]
+            })(
 
-            type=='MultTree'?(
-              <TreeSelect  {...ipt_attrs}
-                dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                allowClear
-                multiple
-                treeDefaultExpandAll
-                showCheckedStrategy={TreeSelect.SHOW_ALL}
-              >
-                {_this.renderTreeNode(item.tree_data, item.children_key, item.value_key, item.label_key, item.icon_key, name)}
-              </TreeSelect>
-            ) : type=='Custom'?(
-              item.render && item.render()
-            ) : type=='Radios'?(
-              <RadioGroup {...ipt_attrs} options={options}/>
-            ) : type=='Select'?(
-              <Select {...ipt_attrs}>
-                {options.map(({value, label, attrs={}}, opt_i)=><Option key={item_key+'_'+opt_i} value={value} {...attrs}>{label}</Option>)}
-              </Select>
-            ) : type=='Number'?(
-              <InputNumber {...ipt_attrs} />
-            ) : type=='TextArea'?(
-              <TextArea {...ipt_attrs} />
-            ) : (
-              <Input {...ipt_attrs} />
+              type=='MultTree'?(
+                <TreeSelect  {...ipt_attrs}
+                  dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+                  allowClear
+                  multiple
+                  treeDefaultExpandAll
+                  showCheckedStrategy={TreeSelect.SHOW_ALL}
+                >
+                  {_this.renderTreeNode(item.tree_data, item.children_key, item.value_key, item.label_key, item.icon_key, name)}
+                </TreeSelect>
+              ) : type=='Radios'?(
+                <RadioGroup {...ipt_attrs} options={options}/>
+              ) : type=='Select'?(
+                <Select {...ipt_attrs}>
+                  {options.map(({value, label, attrs={}}, opt_i)=><Option key={item_key+'_'+opt_i} value={value} {...attrs}>{label}</Option>)}
+                </Select>
+              ) : type=='Number'?(
+                <InputNumber {...ipt_attrs} />
+              ) : type=='TextArea'?(
+                <TextArea {...ipt_attrs} />
+              ) : (
+                <Input {...ipt_attrs} />
+              )
             )
-          )}
+          }
           {item.children}
         </FormItem>
       );
