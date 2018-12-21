@@ -122,7 +122,7 @@ class ModalForm extends React.Component {
       const initialValue = type=='Number'?( Number(value)||0 ): (value===0?'0':(value||''));
       if(!name){
         console.error('缺少必要属性[name]:', );
-        return '<span>缺少必要属性[name]</span>';
+        return '缺少必要属性[name]';
       }
 
       const formItemLayout = fil_fun(l_span, w_span);
