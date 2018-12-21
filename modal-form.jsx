@@ -100,7 +100,7 @@ class ModalForm extends React.Component {
     const _this = this;
     const {l_span=5, w_span=18} = _this.props;
     return (items||[]).map((item, item_i)=>{
-      const {label, name, type, value, options, placeholder, min, max, rows, required, style, disabled, isHidden, onChange, className, rules=[]} = item;
+      const {label, labelCol, wrapperCol, name, type, value, options, placeholder, min, max, rows, required, style, disabled, isHidden, onChange, className, rules=[]} = item;
 
       const item_key = _parent_key+'_mfi_'+item_i;
       if(type=='group'){
@@ -112,7 +112,7 @@ class ModalForm extends React.Component {
       }
       
       const ipt_attrs = { placeholder, onChange, min, max, rows };
-      const item_attrs = { label, style, className };
+      const item_attrs = { label, style, className, labelCol, wrapperCol };
       if(type=='hidden'||isHidden){
         item_attrs.style = Object.assign(item_attrs.style||{}, { display:'none' });
       }
@@ -125,10 +125,13 @@ class ModalForm extends React.Component {
         return '缺少必要属性[name]';
       }
 
-      const formItemLayout = fil_fun(l_span, w_span);
+      const formItem_attr = {
+        ...fil_fun(l_span, w_span),
+        ...item_attrs
+      };
 
       return (
-        <FormItem key={item_key} {...formItemLayout} {...item_attrs}>
+        <FormItem key={item_key} {...formItem_attr}>
           {getFieldDecorator(name, {
             initialValue,
             rules: [
