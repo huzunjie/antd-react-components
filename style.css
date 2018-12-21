@@ -1,0 +1,123 @@
+
+#doc .search-form{
+  text-align: right;
+  border-bottom: 1px solid #f0f2f5;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+#doc .ant-table-placeholder{
+  border-bottom: 0;
+}
+#doc .btn-ctrl {
+  font-size: 12px;
+  height: 28px;
+  width: auto;
+  padding: 0 9px;
+}
+#doc .btn-ctrl .anticon{
+  margin-right: 0px;
+}
+#doc .btn-ctrl .anticon + span{
+  margin-left: 3px;
+}
+#doc .btn-ctrl.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only) .anticon {
+  margin-left: 0;
+}
+#doc .td-action-bar .btn-ctrl{
+  margin: 0 3px;
+}
+
+/* 接受 */
+#doc .btn-receive{
+  color: #fff;
+  background-color: #67c23a;
+  border-color: #67c23a;
+}
+#doc .btn-receive:hover {
+  color: #fff;
+  background-color: #42bd07;
+  border-color: #42bd07;
+}
+#doc .btn-receive:active {
+  color: #fff;
+  background-color: #3aab04;
+  border-color: #3aab04;
+}
+
+/* 拒绝 */
+#doc .btn-reject{
+  color: #fff;
+  background-color: #f56c6c;
+  border-color: #f56c6c;
+}
+#doc .btn-reject:hover {
+  color: #fff;
+  background-color: #ec4c4c;
+  border-color: #ec4c4c;
+}
+#doc .btn-reject:active {
+  color: #fff;
+  background-color: #ea3838;
+  border-color: #ea3838;
+}
+
+#doc .sub-title{
+  border-left: solid 3px #dfe4e8;
+  padding: 5px 10px;
+  background-color: #f7f7f7;
+  font-size: 15px;
+}
+
+#doc .txt-waiting{
+  color: #1890ff;
+}
+#doc .txt-warning{
+  color: #ffa715;
+}
+#doc .txt-failed{
+  color: #ff5900;
+}
+#doc .txt-succeed{
+  color: #3ac701;
+}
+#doc .txt-invalid{
+  color: #98a6c1;
+}
+
+/* 通过给FormItem设置calssName="ant-form-item-addon" 将 FormItem 渲染为前缀样式 */
+#doc .ant-form-item.ant-form-item-addon {
+  display: table; 
+  margin-right: 6px;
+}
+#doc .ant-form-item.ant-form-item-addon .ant-form-item-label {
+  display: table-cell; 
+}
+#doc .ant-form-item.ant-form-item-addon .ant-form-item-label label {
+  padding: 6px 11px 7px;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+  margin-right: -1px; 
+}
+#doc .ant-form-item.ant-form-item-addon .ant-form-item-label label:after {
+  display: none; 
+}
+#doc .ant-form-item.ant-form-item-addon .ant-form-item-control-wrapper {
+  display: table-cell;
+  width: 100%; 
+}
+#doc .ant-form-item.ant-form-item-addon .ant-form-item-control-wrapper .ant-input,
+#doc .ant-form-item.ant-form-item-addon .ant-form-item-control-wrapper .ant-select-selection,
+#doc .ant-form-item.ant-form-item-addon .ant-form-item-control-wrapper .ant-input-number {
+  border-radius: 0 4px 4px 0; 
+}
+#doc .ant-form-item.ant-form-item-addon .ant-form-item-control-wrapper .ant-calendar-picker {
+  width: 100%; 
+}
+#doc .ant-form-inline .ant-form-item.ant-form-item-addon .ant-form-item-control-wrapper,
+#doc .ant-form-inline .ant-form-item.ant-form-item-addon .ant-form-item-control-wrapper .ant-calendar-picker {
+  width: auto; 
+}
