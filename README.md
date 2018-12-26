@@ -4,7 +4,10 @@ Ant Design 通用组件
 
 ## 模态表单
 
-伪代码示例：
+### 效果示例：
+![](https://p2.ssl.qhimg.com/t01118c8b4dd43ee687.png)
+
+### 代码示例：
 
 ```javascript
 import ModalForm from './modal-form.jsx';
@@ -68,7 +71,10 @@ return (
 ```
 ## 搜索栏
 
-伪代码示例：
+### 效果示例：
+![](https://p1.ssl.qhimg.com/t01da2114bb058f1ecf.png)
+
+### 代码示例：
 
 ```javascript
 import ModalForm from './search-form.jsx';
