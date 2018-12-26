@@ -72,7 +72,7 @@ return (
 ## 搜索栏
 
 ### 效果示例：
-![](https://p1.ssl.qhimg.com/t01da2114bb058f1ecf.png)
+![](https://p1.ssl.qhimg.com/t01f8c3c2d35ee577c7.png)
 
 ### 代码示例：
 
@@ -86,8 +86,19 @@ return (
       type: 'RadioButtons', 
       name: 'status', 
       value: status,
-      options: [{ value:'1', label:'status 1' },{ value:'2', label:'status 2' }],
+      options: [{ value:'1', label:'认可的' },{ value:'2', label:'驳斥的' }],
       onChange:(e)=>getList({ status: e.target.value, page:1, keyword:'' }),
+      style: {float: 'left'},
+    },
+    {
+      type: 'Select', 
+      label: '数据类别',
+      name: 'type_id', 
+      value: '1',
+      options: [{ value:'1', label:'分类1' },{ value:'2', label:'分类2' }],
+      onChange: type_id=>getList({ type_id }),
+      className:'ant-form-item-addon',
+      dropdownMatchSelectWidth: false,
       style: {float: 'left'},
     },
     {
